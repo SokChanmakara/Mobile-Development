@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final Uri _url = Uri.parse('https://www.linkedin.com/feed/');
-final Uri url = Uri.parse('https://web.facebook.com/?_rdc=1&_rdr');
+final Uri url = Uri.parse('https://t.me.Chanmakaraaa');
 void main() {
   runApp(const MyApp());
 }
