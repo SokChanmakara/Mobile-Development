@@ -1,10 +1,14 @@
 # portfolio
 
-A new Flutter project.
+A small portfolio assignment using flutter. 
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+Essential Features: 
+.Profile Section
+.Introduction
+.Buttons
 
 A few resources to get you started if this is your first Flutter project:
 
