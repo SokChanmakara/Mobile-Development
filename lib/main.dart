@@ -137,19 +137,113 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  bool agreeToTerms = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => WelcomePage(username: "Chanmakara")),
-            );
-          },
-          child: Text("Register"),
+      body: Padding(
+        padding: EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 60),
+            Text(
+              "Register new \naccount",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              width: 100,
+              child: Image.asset('assets/images/accent.png'),
+            ),
+            SizedBox(height: 50),
+            TextField(
+              decoration: InputDecoration(
+                fillColor: Colors.grey[300],
+                filled: true,
+                labelText: "Email",
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                fillColor: Colors.grey[300],
+                filled: true,
+                labelText: "Password",
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                fillColor: Colors.grey[300],
+                filled: true,
+                labelText: "Confirm Password",
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+              ),
+            ),
+            SizedBox(height: 10),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Checkbox(
+                value: agreeToTerms,
+                onChanged: (value) {
+                setState(() {
+                  agreeToTerms = value!;
+                });
+                },
+              ),
+              Expanded(
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("By creating an account, you agree to our"),
+                  Text(
+                  "Term & Condition",
+                  style: TextStyle(color: Colors.blue),
+                  ),
+                ],
+                ),
+              ),
+              ],
+            ),
+
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WelcomePage(username: "Chanmakara")),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: Text("Register", style: TextStyle(color: Colors.white)),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Already have an account? Login", style: TextStyle(color: Colors.blue)),
+              ),
+            ),
+          ],
         ),
       ),
     );
