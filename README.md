@@ -1,12 +1,25 @@
-# login_ui
+# Flutter Login UI
 
-A new Flutter project.
+A simple Flutter-based Login app that allows users to register and log in.
 
-## Getting Started
+## Features
+- **Just a login page and registration page**
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+1. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+2. Run the app:
+   ```sh
+   flutter run
+   ```
+
+## Author
+Sok Chanmakara
+
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
