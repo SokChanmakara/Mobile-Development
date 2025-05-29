@@ -104,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('asset/images/teacher2.png', height: 170),
-              Image.asset('asset/images/teacher3.png', height: 170),
-              Image.asset('asset/images/teacher4.png', height: 170),
+              Expanded(child: Image.asset('asset/images/teacher2.png', height: 170)),
+              Expanded(child: Image.asset('asset/images/teacher3.png', height: 170)),
+              Expanded(child: Image.asset('asset/images/teacher4.png', height: 170)),
             ],
           ),
           const SizedBox(height: 16),
@@ -153,12 +153,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          Align(
-            alignment: Alignment.center,
-            child: const Text(
-              'Certified',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+          const Text(
+            'Certified',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           Image.asset("asset/images/itclogo.png"),
           const SizedBox(height: 16),
@@ -167,34 +165,21 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.facebook, size: 40),
+                icon: const Icon(Icons.facebook, size: 40, color: Colors.blue),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.play_arrow, size: 40),
+                icon: const Icon(Icons.play_arrow, size: 40, color: Colors.red),
               ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.gif_box, size: 40)),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.gif_box, size: 40, color: Colors.purple),
+              ),
             ],
           ),
           const SizedBox(height: 16),
-          Center(child: Text('2023 Worktency, Inc. All rights reserved.')),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 0,
-        onTap: (index) {
-          // Implement navigation logic if needed
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Explore'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book_outlined),
-            label: 'My Courses',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.play_arrow_rounded),
-            label: 'Online Courses',
+          const Center(
+            child: Text('2023 Worktency, Inc. All rights reserved.'),
           ),
         ],
       ),
