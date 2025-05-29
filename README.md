@@ -83,16 +83,3 @@ All images are stored in the `asset/images/` directory and properly declared in 
 - Follows Flutter best practices for responsive design
 - Modular component architecture for reusability
 
-## Screenshots
-
-[Add your application screenshots here]
-
-## License
-
-This project is created for educational purposes.
-
----
-
-**Developer**: [Your Name]
-**Version**: 1.0.0
-**Last Updated**: May 30, 2025
