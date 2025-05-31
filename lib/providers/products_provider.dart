@@ -16,6 +16,6 @@ final productsProvider = Provider((ref){
   return allProducts;
 });
 
-final reducedProject = Provider((ref){
-  return allProducts.where((p) => p.price < 50).toList();
+final reducedProductProvider = Provider((ref){
+  return allProducts.where((p) => p.price > 50).toList();
 });
