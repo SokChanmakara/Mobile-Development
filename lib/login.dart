@@ -23,9 +23,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   final Map<String, Map<String, String>> localizedStrings = {
-    'en': {'greeting': 'Hello!', 'login': 'Login'},
-    'fr': {'greeting': 'Salut!', 'login': 'Connexion'},
-    'kh': {'greeting': 'សួស្តី!', 'login': 'ចូល'},
+    'en': {'greeting': 'Hello!', 'login': 'Login', 'mode': 'Dark Mode'},
+    'fr': {'greeting': 'Salut!', 'login': 'Connexion', 'mode': 'Mode sombro'},
+    'kh': {'greeting': 'សួស្តី!', 'login': 'ចូល', 'mode': 'ផ្ទាំងងងឹត'},
   };
 
   @override
@@ -162,7 +162,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Dark Mode"),
+                  Text(
+                    localizedStrings[widget.currentLang]!['mode'] ?? 'Dark mode',
+                  ),
                   const SizedBox(width: 8),
                   Switch(
                     value: widget.isDarkMode,
