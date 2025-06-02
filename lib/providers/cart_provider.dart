@@ -1,11 +1,14 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_project/models/product.dart';
 
-class CartNotifier extends Notifier<Set<Product>>{
+part 'cart_provider.g.dart';
+
+@riverpod
+class CartNotifier extends _$CartNotifier {
   @override
   Set<Product> build() {
       //example this is the current state (state)
-    return {};
+    return const {};
   }
 
   // Method to update the state
@@ -33,6 +36,6 @@ class CartNotifier extends Notifier<Set<Product>>{
   }
 }
 
-final cartNotifierProvider = NotifierProvider<CartNotifier, Set<Product>>((){
-  return CartNotifier();
-});
+// final cartNotifierProvider = NotifierProvider<CartNotifier, Set<Product>>((){
+//   return CartNotifier();
+// });
