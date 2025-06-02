@@ -17,6 +17,7 @@ const List <Product> allProducts = [
 //   return allProducts;
 // });
 
+//a read only provider
 @riverpod
 List<Product> products(ref){
   return allProducts;
