@@ -16,6 +16,8 @@ class _CartScreenState extends ConsumerState<CartScreen> {
   @override
   Widget build(BuildContext context) {
     final cartProducts = ref.watch(cartNotifierProvider);
+    final cartTotal = ref.watch(cartTotalProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Cart'),
@@ -27,7 +29,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
         child: Column(
           children: [
             Column(
-              children: cartProducts.map((product){
+              children: cartProducts.map((product){ //.map take every product in the list and return a container widget
                 return Container(
                   padding: const EdgeInsets.only(top:10, bottom: 10),
                   child: Row(
@@ -40,10 +42,11 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                     ],
                     ),
                 );
-              }).toList(), // output cart products here
+              }).toList(), // convert it to list
             ),
 
             // output totals here
+            Text('Total price - \$$cartTotal'),
           ],
         ),
       ),
