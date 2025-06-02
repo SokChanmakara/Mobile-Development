@@ -1,5 +1,6 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_project/models/product.dart';
+part 'products_provider.g.dart';
 
 const List <Product> allProducts = [
   Product(id: '1', title: 'Groovy Shorts', price: 12, image: 'assets/products/shorts.png'),
@@ -12,10 +13,21 @@ const List <Product> allProducts = [
   Product(id: '8', title: 'Electric Guitar', price: 79, image: 'assets/products/guitar.png'),
 ];
 
-final productsProvider = Provider((ref){
-  return allProducts;
-});
+// final productsProvider = Provider((ref){
+//   return allProducts;
+// });
 
-final reducedProductProvider = Provider((ref){
-  return allProducts.where((p) => p.price > 50).toList();
-});
+@riverpod
+List<Product> products(ref){
+  return allProducts;
+}
+
+// final reducedProductProvider = Provider((ref){
+//   return allProducts.where((p) => p.price < 50).toList();
+// });
+
+@riverpod
+List<Product> reducedProducts(ref){
+  return allProducts.where((p) => p.price < 50).toList();
+}
+
