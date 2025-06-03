@@ -18,10 +18,10 @@ class SearchBarWidget extends StatelessWidget {
       padding: const EdgeInsets.all(AppConfig.defaultPadding),
       child: TextField(
         controller: controller,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           labelText: AppConfig.searchHint,
           prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         ),
         onChanged: onChanged,
       ),
